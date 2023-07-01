@@ -1,0 +1,14 @@
+.menuItem {
+    text-decoration: none !important;
+    font-weight: bold;
+    color: white;
+}
+
+.menuItem:hover, .menuItem:active {
+    color: gold !important;
+} 
+
+.active {
+    color: gold !important;
+    
+}

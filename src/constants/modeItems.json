@@ -1,0 +1,27 @@
+[{
+    "label": "Breakfast",
+    "icon": "bi bi-egg-fried",
+    "department": "breakfast"
+}, {
+    "label": "Lunch",
+    "icon": "bi bi-brightness-alt-high",
+    "department": "lunch"
+}, {
+    "label": "Supper",
+    "icon": "bi bi-moon-stars",
+    "department": "supper"
+}
+, {
+    "label": "Appointments",
+    "icon": "bi bi-calendar-range",
+    "department": "appointments"
+}
+, {
+    "label": "Examinations",
+    "icon": "bi bi-clipboard-pulse",
+    "department": "exam"
+}, {
+    "label": "Card Writing",
+    "icon": "bi bi-broadcast",
+    "department": "default"
+}]
