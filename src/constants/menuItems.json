@@ -1,14 +1,14 @@
 [{
     "label": "Scanning",
-    "icon": "nfc",
-    "target": "scanningPage"
+    "icon": "nope",
+    "target": "scanning"
 }, {
     "label": "Modes",
-    "icon": "nfc",
-    "target": "modesPage"
+    "icon": "nope",
+    "target": "modes"
 }, {
     "label": "Sync",
-    "icon": "nfc",
-    "target": "syncPage"
+    "icon": "nope",
+    "target": "sync"
 }]
 

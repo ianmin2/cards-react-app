@@ -1,0 +1,47 @@
+:root {
+    --primary-color: rgb(25, 47, 89);
+    --secondary-color: #DD9933;
+    --tertiary-color: rgb(173, 216, 230);  /* Light Blue */
+    --accent-color: #FDFD96;  /* Pale Yellow */
+    --contrast-color:  #800000;  /* Maroon */
+  }
+
+  .bg-primary {
+    background-color: var(--primary-color) !important;
+  }
+
+/* btn-primary */
+
+  .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    text-shadow: var(--accent-color) .5px .2px;
+  }
+
+  .btn-primary:active {
+    color: var(--secondary-color);
+    text-shadow: var(--primary-color) .5px .2px;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--secondary-color);
+    text-shadow: var(--primary-color) .5px .2px;
+  }
+
+/* btn-contrast */
+
+  .btn-contrast {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    font-weight: 600;
+    text-shadow: var(--accent-color) .5px .5px;
+    color: var(--primary-color)
+  }
+
+  .btn-contrast:active {
+    color: var(--secondary-color);
+  }
+
+  .btn-contrast:hover {
+    background-color: var(--secondary-color);
+  }

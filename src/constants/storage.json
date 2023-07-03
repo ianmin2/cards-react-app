@@ -1,0 +1,22 @@
+{
+    "docs": {
+        "cafeteria" : [],
+        "exam" : []
+
+    },
+    "updates": {
+        "cafeteria" : "never updated",
+        "exam" : "never updated"
+    },
+    "apiKey" :  0,
+    "setup": 0,
+    "mode" : "default",
+    "history" : [],
+    "examHistory" : [],
+    "disabledCards" : [],
+    "nfc": {
+        "enabled" : false, 
+        "listening" : false
+    },
+    "residences": ["new mens dorm" ,"old mens dorm" ,"ladies annex" ,"annex" ,"ladies dorm"]
+}
