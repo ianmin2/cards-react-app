@@ -1,53 +1,44 @@
-import ScanningPage from "../scanning";
-import { PAGES } from "../../constants/index.ts";
-import RegistrationPage from "../registration";
-import ModesPage from "../modes";
-import SyncPage from "../sync";
+/* eslint-disable no-unused-vars */
+import ScanningPage from '../scanning';
+import { PAGES } from '../../constants/index.ts';
+import RegistrationPage from '../registration';
+import ModesPage from '../modes';
+import SyncPage from '../sync';
 import { useContext } from 'react';
 import { appContext } from '../../App';
 
-const LanderPage = ({
-  activePage,
-  scanningMode,
-  setScanningMode,
-  showAlert,
-}) => {
-  // const [renderPage, setRenderPage] = useState()
-
 const LanderPage = () => {
+  const { page: current } = useContext(appContext);
 
+  let renderPage = '404! Lost in a small world.';
 
-    const {  page:current } = useContext(appContext)
+  switch (current) {
+    case PAGES.REGISTRATION:
+      renderPage = (<RegistrationPage></RegistrationPage>);
+      break;
 
-    let renderPage = '404! Lost in a small world.';
+    case PAGES.MODES:
+      renderPage = (<ModesPage></ModesPage>);
+      break;
 
-    switch (current) {
-        case PAGES.REGISTRATION:
-            renderPage = (<RegistrationPage></RegistrationPage>)
-        break;
+    case PAGES.SCANNING:
+      renderPage = (<ScanningPage></ScanningPage>);
+      break;
 
-        case PAGES.MODES: 
-            renderPage = (<ModesPage></ModesPage>);
-        break;
+    case PAGES.SYNC:
+      renderPage = (<SyncPage></SyncPage>);
+      break;
 
-        case PAGES.SCANNING: 
-            renderPage = (<ScanningPage></ScanningPage>);
-        break;
+    default:
+      renderPage = (<RegistrationPage></RegistrationPage>);
+      break;
+  }
 
-        case PAGES.SYNC:
-            renderPage = (<SyncPage></SyncPage>);
-        break; 
-    
-        default:
-            renderPage = (<RegistrationPage></RegistrationPage>)
-        break;
-    }
-
-    return (
+  return (
         <>
             {renderPage}
         </>
-    )
-}
+  );
+};
 
 export default LanderPage;

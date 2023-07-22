@@ -1,7 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import StatusItemList from '../../components/StatusItemList';
+import { useAlertDialog } from '../../custom/AlertDialog';
 
-const SyncPage = ({ showAlert = () =>{} }) => {
+const SyncPage = (
+) => {
+  const { showAlert } = useAlertDialog();
+
   const handleClick = () => {
     // showAlert("Warning", "Not implemented.", () => {
     //   console.log("OK button clicked");

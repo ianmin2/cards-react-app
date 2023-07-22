@@ -1,13 +1,11 @@
 import { useContext } from 'react';
 import { appContext } from '../../App';
 
-const ScanningPage = ({config = {lastScanned : {}}}) => {
-    
-   const {mode: scanningMode}  = useContext(appContext)
-    
-    return (
-        <>
+const ScanningPage = ({ config = { lastScanned: {} } }) => {
+  const { mode: scanningMode } = useContext(appContext);
 
+  return (
+    <>
       <ul className="list-group w-90">
         <li className="list-group-item  d-flex justify-content-center">
           <button type="button" className="btn btn-contrast col-10">
