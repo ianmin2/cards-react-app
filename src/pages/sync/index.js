@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import StatusItemList from '../../components/StatusItemList';
 
-const SyncPage = ({ scanningMode, showAlert }) => {
+const SyncPage = ({ showAlert = () =>{} }) => {
   const handleClick = () => {
     // showAlert("Warning", "Not implemented.", () => {
     //   console.log("OK button clicked");

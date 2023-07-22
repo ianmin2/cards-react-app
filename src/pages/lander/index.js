@@ -1,9 +1,10 @@
-/* eslint-disable no-unused-vars */
-import ScanningPage from '../scanning';
-import { PAGES } from '../../constants/index.ts';
-import RegistrationPage from '../registration';
-import ModesPage from '../modes';
-import SyncPage from '../sync';
+import ScanningPage from "../scanning";
+import { PAGES } from "../../constants/index.ts";
+import RegistrationPage from "../registration";
+import ModesPage from "../modes";
+import SyncPage from "../sync";
+import { useContext } from 'react';
+import { appContext } from '../../App';
 
 const LanderPage = ({
   activePage,
@@ -13,42 +14,40 @@ const LanderPage = ({
 }) => {
   // const [renderPage, setRenderPage] = useState()
 
-  let renderPage = '404! Lost in a small world.';
+const LanderPage = () => {
 
-  switch (activePage) {
-    case PAGES.REGISTRATION:
-      renderPage = <RegistrationPage showAlert={showAlert}></RegistrationPage>;
-      break;
 
-    case PAGES.MODES:
-      renderPage = (
-        <ModesPage
-          scanningMode={scanningMode}
-          setScanningMode={setScanningMode}
-          showAlert={showAlert}></ModesPage>
-      );
-      break;
+    const {  page:current } = useContext(appContext)
 
-    case PAGES.SCANNING:
-      renderPage = (
-        <ScanningPage
-          scanningMode={scanningMode}
-          showAlert={showAlert}></ScanningPage>
-      );
-      break;
+    let renderPage = '404! Lost in a small world.';
 
-    case PAGES.SYNC:
-      renderPage = (
-        <SyncPage scanningMode={scanningMode} showAlert={showAlert}></SyncPage>
-      );
-      break;
+    switch (current) {
+        case PAGES.REGISTRATION:
+            renderPage = (<RegistrationPage></RegistrationPage>)
+        break;
 
-    default:
-      renderPage = <RegistrationPage showAlert={showAlert}></RegistrationPage>;
-      break;
-  }
+        case PAGES.MODES: 
+            renderPage = (<ModesPage></ModesPage>);
+        break;
 
-  return <>{renderPage}</>;
-};
+        case PAGES.SCANNING: 
+            renderPage = (<ScanningPage></ScanningPage>);
+        break;
+
+        case PAGES.SYNC:
+            renderPage = (<SyncPage></SyncPage>);
+        break; 
+    
+        default:
+            renderPage = (<RegistrationPage></RegistrationPage>)
+        break;
+    }
+
+    return (
+        <>
+            {renderPage}
+        </>
+    )
+}
 
 export default LanderPage;

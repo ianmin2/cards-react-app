@@ -1,8 +1,12 @@
-const ScanningPage = ({ config = { lastScanned: {} }, scanningMode }) => {
-  return (
-    <>
-      <br />
-      <br />
+import { useContext } from 'react';
+import { appContext } from '../../App';
+
+const ScanningPage = ({config = {lastScanned : {}}}) => {
+    
+   const {mode: scanningMode}  = useContext(appContext)
+    
+    return (
+        <>
 
       <ul className="list-group w-90">
         <li className="list-group-item  d-flex justify-content-center">
