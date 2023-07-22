@@ -1,4 +1,10 @@
-const ScanningPage = ({config = {lastScanned : {}},scanningMode}) => {
+import { useContext } from 'react';
+import { appContext } from '../../App';
+
+const ScanningPage = ({config = {lastScanned : {}}}) => {
+    
+   const {mode: scanningMode}  = useContext(appContext)
+    
     return (
         <>
 

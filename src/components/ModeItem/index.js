@@ -4,7 +4,7 @@ const ModeItem = (props) => {
     return (
         <li className={`list-group-item ${styles.modeItem} d-grid gap-2`}>
             <button 
-                className={`btn btn-primary  ${(props.isActive == true ? styles.activeItem : '' )}`}
+                className={`btn btn-primary  ${(props.isActive === true ? styles.activeItem : '' )}`}
                 type='button'
                 onClick={()=>props.setMode(props.config.department)}
             > 

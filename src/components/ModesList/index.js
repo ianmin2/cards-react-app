@@ -1,18 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ModeItem from "../ModeItem/index.js";
-import {STORAGE_KEYS  } from "../../constants/index.ts";
-import AppStorage from "../../lib/helpers/appStorage.ts";
+import { appContext } from '../../App.js';
 
 
 
-const ModesList = ({scanningMode, setScanningMode}) => {
+const ModesList = () => {
 
-    const [modeItems, setModeItems] = useState(AppStorage.get(STORAGE_KEYS.MODE_ITEMS));
-   
+    const { 
+        modes: modeItems, 
+        mode:scanningMode, 
+        switchMode: setScanningMode
+     } = useContext(appContext);
+
     return (
+    
         <ul className="list-group">
          {   
             modeItems.map( (cfg) =>  ( 
+               
                     <ModeItem 
                         key={cfg.department} 
                         config={cfg}

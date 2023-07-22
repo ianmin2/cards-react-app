@@ -1,10 +1,10 @@
 import StatusItemList from "../../components/StatusItemList";
 
-const SyncPage = ({scanningMode}) => {
-    return (
+const SyncPage = () => {
+ return (
         <>
             <StatusItemList></StatusItemList>
-            <hr />
+            <hr /> 
             <ul className="list-group">
                 <li className="list-group-item d-grid gap-2" >
                     <button button type="button" className="btn btn-danger">
