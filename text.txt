@@ -1,0 +1,13 @@
+Non-blocking fork effects​
+Contributor @slorber mentioned in issue#760 several other common root implementations. To start, there is one popular implementation that behaves similarly to the tutorial root saga behavior:
+
+export default function* rootSaga() {
+  yield fork(saga1)
+  yield fork(saga2)
+  yield fork(saga3)
+  // code after fork-effect
+}
+Rub Gud11:00 AM
+https://github.com/salvoravida/redux-first-history
+
+https://redux-saga.js.org/docs/basics/UsingSagaHelpers

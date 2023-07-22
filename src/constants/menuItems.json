@@ -1,14 +1,17 @@
-[{
+[
+  {
     "label": "Scanning",
     "icon": "nope",
     "target": "scanning"
-}, {
+  },
+  {
     "label": "Modes",
     "icon": "nope",
     "target": "modes"
-}, {
+  },
+  {
     "label": "Sync",
     "icon": "nope",
     "target": "sync"
-}]
-
+  }
+]

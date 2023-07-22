@@ -1,62 +1,62 @@
-
 interface iAppSockets {
-    disconnect(): void;
-    sendMessage(messageLabel: string, messageContent: any): void;
-    catchMessage(messageLabel:string, messageCallback: Function):void;
+  disconnect(): void;
+  sendMessage(messageLabel: string, messageContent: any): void;
+  catchMessage(messageLabel: string, messageCallback: Function): void;
 }
 
 interface iMessageHandler {
-    message: string,
-    handler: Function,
+  message: string;
+  handler: Function;
 }
 
 interface iAppSocketConstructorParams {
-    setConnectionStatus: Function,
-    hostAddr: string,
-    messageHandlers: iMessageHandler[]
+  setConnectionStatus: Function;
+  hostAddr: string;
+  messageHandlers: iMessageHandler[];
 }
 
 class AppSockets implements iAppSockets {
+  connection: any;
+  status: boolean;
+  connectionAddress: string;
+  setConnectionState: Function;
 
-    connection: any;
-    status: boolean;
-    connectionAddress: string;
-    setConnectionState: Function;
+  constructor({
+    setConnectionStatus,
+    hostAddr,
+    messageHandlers,
+  }: iAppSocketConstructorParams) {
+    this.connectionAddress = hostAddr;
+    this.setConnectionState = setConnectionStatus;
+    this.connection = this.connect();
+    this.registerMessageHandlers(messageHandlers);
+  }
 
+  private connect(): any {
+    const conn = io.connect(this.connectionAddress);
+    this.setConnectionState(true);
+    return conn;
+  }
 
-    constructor( { setConnectionStatus, hostAddr, messageHandlers } : iAppSocketConstructorParams  ){
-        this.connectionAddress = hostAddr;
-        this.setConnectionState = setConnectionStatus;
-        this.connection = this.connect();
-        this.registerMessageHandlers(messageHandlers);
-    }
+  disconnect() {
+    this.setConnectionState(false);
+  }
 
-    private connect(): any {
-        const conn = io.connect(this.connectionAddress);
-        this.setConnectionState(true);
-        return conn;
-    }
+  sendMessage(messageLabel: string, messageContent: any) {
+    this.connection.emit(messageLabel);
+  }
 
-    disconnect() {
-        this.setConnectionState(false);
-    }
+  catchMessage(messageLabel: string, messageCallback: Function) {
+    this.connection.on(messageLabel, messageCallback(this.sendMessage));
+  }
 
-    sendMessage(messageLabel: string, messageContent: any) {
-        this.connection.emit(messageLabel, )
-    }
-
-    catchMessage(messageLabel:string, messageCallback: Function) {
-        this.connection.on(messageLabel, messageCallback(this.sendMessage))
-    }
-
-    private registerMessageHandlers(messageHandlers: iMessageHandler[] = []) {
-        messageHandlers.map((messageHandler: iMessageHandler)=> {
-            this.catchMessage(messageHandler.message, messageHandler.handler)
-        })
-    }
-
+  private registerMessageHandlers(messageHandlers: iMessageHandler[] = []) {
+    messageHandlers.map((messageHandler: iMessageHandler) => {
+      this.catchMessage(messageHandler.message, messageHandler.handler);
+    });
+  }
 }
 
 export default AppSockets;
 
-export {iAppSockets, iMessageHandler, iAppSocketConstructorParams}
+export { iAppSockets, iMessageHandler, iAppSocketConstructorParams };

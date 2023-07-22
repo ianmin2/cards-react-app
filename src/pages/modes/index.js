@@ -1,11 +1,12 @@
-import ModesList from "../../components/ModesList";
+// eslint-disable-next-line no-unused-vars
+import ModesList from '../../components/ModesList';
 
 const ModesPage = (props) => {
-return (
+  return (
     <>
-        <ModesList {...props}></ModesList>
+      <ModesList {...props}></ModesList>
     </>
-)
-}
+  );
+};
 
 export default ModesPage;

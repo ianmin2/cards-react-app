@@ -1,15 +1,16 @@
 .menuItem {
-    text-decoration: none !important;
-    font-weight: bold;
-    color: white;
-    text-shadow: var(--contrast-color) .5px .2px;
+  text-decoration: none !important;
+  font-weight: bold;
+  color: white;
+  text-shadow: var(--contrast-color) 0.5px 0.2px;
 }
 
-.menuItem:hover, .menuItem:active {
-    color: gold !important;
-} 
+.menuItem:hover,
+.menuItem:active {
+  color: gold !important;
+}
 
 .activeItem {
-    color: gold !important;
-    text-shadow: black .2px .2px;
+  color: gold !important;
+  text-shadow: black 0.2px 0.2px;
 }

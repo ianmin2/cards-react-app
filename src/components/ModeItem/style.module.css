@@ -1,11 +1,11 @@
 .pullLeft {
-    float: left !important;
-    margin-right: 0.5rem !important;
-  }
+  float: left !important;
+  margin-right: 0.5rem !important;
+}
 
-  .activeItem {
-    background-color: var(--secondary-color);
-    color: #192F59 !important ;
-    font-weight: 600;
-    text-shadow: var(--accent-color) .3px .3px;
+.activeItem {
+  background-color: var(--secondary-color);
+  color: #192f59 !important ;
+  font-weight: 600;
+  text-shadow: var(--accent-color) 0.3px 0.3px;
 }

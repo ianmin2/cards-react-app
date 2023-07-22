@@ -1,11 +1,14 @@
-[{
-    "label" : "Cafeteria",
+[
+  {
+    "label": "Cafeteria",
     "totalUsers": 0,
     "lastUpdated": "Sat 1 July 2023, 12:44AM",
-    "updateAction" : ""
-},{
-    "label" : "Exams",
+    "updateAction": ""
+  },
+  {
+    "label": "Exams",
     "totalUsers": 0,
     "lastUpdated": "Sat 1 July 2023, 12:44AM",
-    "updateAction" : ""
-}]
+    "updateAction": ""
+  }
+]
