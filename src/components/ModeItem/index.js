@@ -8,8 +8,7 @@ const ModeItem = (props) => {
           props.isActive === true ? styles.activeItem : ''
         }`}
         type="button"
-        onClick={() => props.setMode(props.config.department)}
-      >
+        onClick={() => props.setMode(props.config.department)}>
         <i className={`me-2 ${styles.pullLeft} ${props.config.icon}`}></i>
         {props.children}
       </button>

@@ -8,8 +8,7 @@ const MenuItem = (props) => {
         props.isActive === true ? styles.activeItem : ''
       }`}
       href="#"
-      onClick={() => props.setPage(props.config.target)}
-    >
+      onClick={() => props.setPage(props.config.target)}>
       <i className={props.config.icon}></i> {props.config.label}
     </a>
   );

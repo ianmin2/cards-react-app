@@ -27,32 +27,26 @@ const Menu = (props) => {
 
   // const menuItems = ;
   //  text-bg-dark p-3
-    return (
-        <>
-            
-            <nav className={`nav nav-pills nav-fill ${styles.menuBg}`}>
-                {
-                    menuItems.map((cfg) => (
-                        
-                        <MenuItem 
-                            key={cfg.target} 
-                            config={cfg} 
-                            setPage={setActivePage}
-                            isActive={cfg.target === activePage}
-                        />
-                        
-                    ))
-                }
-            </nav>
-            <br />
-            <LanderPage 
-                activePage={activePage} 
-                scanningMode={scanningMode}
-                setScanningMode={setScanningMode}  
-                showAlert={props.showAlert}
-            ></LanderPage>
-        </>
-    );
-}
+  return (
+    <>
+      <nav className={`nav nav-pills nav-fill ${styles.menuBg}`}>
+        {menuItems.map((cfg) => (
+          <MenuItem
+            key={cfg.target}
+            config={cfg}
+            setPage={setActivePage}
+            isActive={cfg.target === activePage}
+          />
+        ))}
+      </nav>
+      <br />
+      <LanderPage
+        activePage={activePage}
+        scanningMode={scanningMode}
+        setScanningMode={setScanningMode}
+        showAlert={props.showAlert}></LanderPage>
+    </>
+  );
+};
 
 export default Menu;

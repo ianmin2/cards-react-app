@@ -1,8 +1,9 @@
-import { iAppStorage } from "./appStorage";
+// eslint-disable-next-line no-unused-vars
+import { iAppStorage } from './appStorage';
 
 const EnsureStorageExists = (
   storageClass: iAppStorage,
-  storageData: object,
+  storageData: object
 ): void => {
   const storageKeys = Object.keys(storageData);
   console.log({ storageKeys, storageData });
